@@ -1,0 +1,26 @@
+/*
+p {
+    color: red;
+    width: 500px;
+    border: 1px solid black;
+}
+*/
+
+/* 元素选择器 */
+p, li, h1 {
+    color: red;
+}
+
+/* ID 选择器 */
+#content {
+    color: cadetblue;
+    font-size: 20px;
+}
+
+/* class 选择器 */
+.editor-note {
+    color: orange;
+    font-size: 18px;
+}
+
+/*属性选择器*/

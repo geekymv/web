@@ -1,0 +1,24 @@
+html {
+    background-color: gainsboro;
+}
+
+body {
+    width: 600px;
+    margin: 100px auto; /* 第一个值上下, 第二个值左右, auto表示水平方向左右对称, margin 也可以只设置1、2、3、4个值 */
+    background-color: #ff9500;
+    padding: 10px 20px 20px 30px; /* body中的内容到body的空间, 上10px 右20px 下20px 左30px */
+    border: 5px solid black; /* 边框 */
+}
+
+#content {
+    border: 1px solid red;
+    width: 200px;
+    height: 300px;
+}
+
+p {
+    border: 1px solid red;
+    margin: 5px; /* p标签和外部div的空间 */
+    padding: 10px; /* p标签里面的内容到p的空间, 上右下左*/
+
+}
