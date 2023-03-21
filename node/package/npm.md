@@ -14,3 +14,7 @@ https://www.npmjs.com/
 `npm i <包名>`
 
 比如下载 npn install uniq
+
+#### 生产依赖和开发依赖
+- 生产依赖 `npm i -S <包名>` 或 `npn i --save <包名>` ，-S 是默认选项，包信息保存在 package.json 中的 dependencies 属性
+- 开发依赖 `npm i -D <包名>` 或 `npm i --save-dev <包名>`，包信息保存在 package.json 中的 devDependencies 属性
