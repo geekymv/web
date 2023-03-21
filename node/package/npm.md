@@ -6,3 +6,11 @@ npm 全称 Node Package Manager，是 node.js 官方内置的包管理工具
 - package.json 是包的配置文件，每个包都必须要有 package.json，可以手动创建和修改
 - 使用 `npm init -y` 或者 `npm init --yes` 快速创建 package.json
 
+#### 查找包
+https://www.npmjs.com/
+
+#### 安装包
+`npm install <包名>`
+`npm i <包名>`
+
+比如下载 npn install uniq
