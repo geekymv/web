@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise</title>
+</head>
+<body>
+<a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises" target="_blank">Promise</a>
+<br/>
+<button id="send">发送请求</button>
+
+<script type="text/javascript">
+
+    const send = document.querySelector("#send");
+
+    send.addEventListener('click', () => {
+        // 发送请求
+        const fetchPromise = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+        console.log(fetchPromise);
+
+        /*
+        fetchPromise.then((response) => {
+            // fetch 操作成功的时候会回调
+            console.log(`Received response ${response.status}`);
+        });
+         */
+        /*
+        fetchPromise.then((response) => {
+            // fetch 操作成功的时候会回调
+            console.log(`Received response ${response.status}`);
+            // json 返回的还是 Promise
+            const jsonPromise = response.json()
+            // 回调里面嵌套回调！！！
+            jsonPromise.then((data) => {
+                console.log(`Response data json is:`)
+                data.forEach((d) => {
+                    console.log(`${d.name}, ${d.price}`)
+                })
+            })
+        });
+         */
+        /*
+        // promise chaining
+        fetchPromise
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(`Response data json is:`)
+                data.forEach((d) => {
+                    console.log(`${d.name}, ${d.price}`)
+                })
+            })
+        */
+        fetchPromise
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log(`Response data json is:`)
+                data.forEach((d) => {
+                    console.log(`${d.name}, ${d.price}`)
+                })
+            })
+            .catch((error) => {
+                console.error(`Could not get products: ${error}`)
+            })
+
+
+        console.log('Started request...');
+
+    });
+
+</script>
+
+</body>
+</html>
