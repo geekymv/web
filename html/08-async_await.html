@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>async_await</title>
+</head>
+<body>
+<a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises" target="_blank">Promise</a>
+<br/>
+<button id="send">发送请求</button>
+
+<script type="text/javascript">
+
+    // 在 async 函数内部使用 await
+    async function myFunction(){
+        // This is an async function
+        try {
+            const response = await fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error: ${response.status}`);
+            }
+            const data = await response.json()
+            console.log(data[0])
+        }
+        catch (error) {
+            console.error(`Could not get products: ${error}`)
+        }
+    }
+
+    send.addEventListener('click', () => {
+        myFunction();
+    });
+
+
+
+</script>
+
+</body>
+</html>
