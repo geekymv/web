@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise-impl</title>
+</head>
+<body>
+<a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Implementing_a_promise-based_API" target="_blank">Promise Implementing</a>
+<br/>
+<label for="name">名字</label>
+<input id="name" type="text" value="tom" /><br/>
+<label for="delay">时间</label>
+<input id="delay" type="number" value="1000" /><br/>
+<button id="set-alarm">Set alarm</button>
+<div id="output"></div>
+
+<script type="text/javascript">
+
+    const name = document.querySelector("#name");
+    const delay = document.querySelector("#delay");
+    const setAlarm = document.querySelector("#set-alarm");
+    const output = document.querySelector("#output");
+
+    function alarm(person, delay) {
+        console.log(person, delay)
+        return new Promise((resolve, reject) => {
+            if (delay < 0) {
+                throw new Error('延迟时间必须大于0');
+            }
+            setTimeout(() => {
+                resolve(`Wake up, ${person}!`);
+            }, delay);
+        });
+    }
+
+    // 使用 async await
+    setAlarm.addEventListener('click', async () => {
+        try {
+            const message = await alarm(name.value, delay.value);
+            output.textContent = message
+
+        } catch (error) {
+            output.textContent = `Couldn't set alarm: ${error}`
+        }
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise-impl</title>
+</head>
+<body>
+<a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Implementing_a_promise-based_API" target="_blank">Promise Implementing</a>
+<br/>
+<button id="set-alarm">Set alarm</button>
+<div id="output"></div>
+
+<script type="text/javascript">
+
+    const setAlarm = document.querySelector("#set-alarm");
+    const output = document.querySelector("#output");
+
+    function alarm() {
+        setTimeout(() => {
+            output.textContent = 'Wake up!';
+        }, 2000);
+    }
+
+    setAlarm.addEventListener('click', alarm);
+
+</script>
+
+</body>
+</html>
