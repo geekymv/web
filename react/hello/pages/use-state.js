@@ -16,11 +16,11 @@ function MyButton() {
     );
 }
 
+/* 每个 button 更新自己的 count，不会互相影响 */
 function UseState() {
     return (
         <div>
             <h1>Counters that update separately</h1>
-            <!-- 每个 button 更新自己的 count，不会互相影响 -->
             <MyButton/>
             <MyButton/>
         </div>
