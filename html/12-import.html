@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>import</title>
+</head>
+<body>
+
+<button id="set-alarm">Set alarm</button>
+
+<script type="module">
+
+    // 方式1
+    /*
+    import * as demo from './scripts/export_demo01.js'
+
+    document.querySelector("#set-alarm").addEventListener('click', () => {
+        console.log(demo.name);
+        console.log(demo.print());
+    })
+     */
+
+    // 方式2
+    /*
+    import {name, print} from './scripts/export_demo01.js'
+
+    document.querySelector("#set-alarm").addEventListener('click', () => {
+        console.log(name);
+        console.log(print());
+    })
+    */
+
+    // 方式3
+    import demo from './scripts/export_demo01.js'
+    document.querySelector("#set-alarm").addEventListener('click', () => {
+        console.log(demo.name);
+        console.log(demo.print());
+    })
+
+</script>
+
+</body>
+</html>
