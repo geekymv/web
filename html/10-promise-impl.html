@@ -23,11 +23,17 @@
 
     function alarm(person, delay) {
         console.log(person, delay)
+        // executor 函数有2个参数 resolve 和 reject
         return new Promise((resolve, reject) => {
             if (delay < 0) {
+                // 抛出异常，会自动执行 reject
                 throw new Error('延迟时间必须大于0');
             }
+            if (delay > 10000) {
+                reject('delay 不能大于10000');
+            }
             setTimeout(() => {
+                console.log('set timeout')
                 resolve(`Wake up, ${person}!`);
             }, delay);
         });
