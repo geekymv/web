@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xhr</title>
+</head>
+<body>
+
+<button id="xhr">发送请求</button>
+<button id="reload">刷新</button>
+<pre readonly class="event-log"></pre>
+
+<script type="text/javascript">
+    const log = document.querySelector(".event-log")
+
+    document.querySelector("#xhr").addEventListener('click', () => {
+        log.textContent = ''
+        const xhr = new XMLHttpRequest();
+        xhr.addEventListener('loadend', () => {
+            log.textContent = `${log.textContent} Finished with status:${xhr.status}`;
+        })
+        xhr.open('GET', 'https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+        xhr.send();
+
+        log.textContent = `${log.textContent} Started XHR request\n`;
+    })
+
+    document.querySelector("#reload").addEventListener('click', () => {
+        log.textContent = '';
+        document.location.reload();
+    })
+
+</script>
+
+</body>
+</html>
