@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sync</title>
+</head>
+<body>
+
+<label for="times">循环次数：</label>
+<input type="text" id="times" name="times" value="100000" />
+<button id="generate">点击</button>
+<button id="reload">刷新</button>
+
+<div id="output"></div>
+
+<script type="text/javascript">
+    const times = document.querySelector("#times");
+    const output = document.querySelector("#output");
+
+
+    function run(t) {
+        for(let i = 0; i < t; i++) {
+            console.log(t);
+        }
+    }
+
+    document.querySelector("#generate").addEventListener('click', () => {
+        run(times.value);
+        output.textContent = `Finish ${times.value} times execute!`;
+    })
+
+    document.querySelector("#reload").addEventListener('click', () => {
+        document.location.reload();
+    })
+
+</script>
+
+
+</body>
+</html>
