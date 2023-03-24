@@ -5,15 +5,30 @@ const products = [
 ];
 
 export default function Products() {
+    /*
+    const listItems = products.map((product) => {
+        return (
+            <li
+                key={product.id}
+                style={{
+                    color: product.isFruit ? 'magenta' : 'darkgreen'
+                }}
+            >
+                {product.title}
+            </li>
+        )
+    }
+    );
+     */
     const listItems = products.map(product =>
-       <li
-           key={product.id}
-           style={{
-               color: product.isFruit ? 'magenta' : 'darkgreen'
-           }}
-       >
-           {product.title}
-       </li>
+        <li
+            key={product.id}
+            style={{
+                color: product.isFruit ? 'magenta' : 'darkgreen'
+            }}
+        >
+            {product.title}
+        </li>
     );
 
     return (
