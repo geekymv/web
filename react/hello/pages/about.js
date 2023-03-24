@@ -46,7 +46,11 @@ function MyButton() {
         </button>
     );
 }
-
+// JSX 要求
+// 1.一个组件只能返回单个元素，可以使用 <div></div> 或者 <></> 包裹，<></> 空标签叫做 Fragment
+// 2.需要关闭所有标签
+// 3.使用驼峰，保留字 class 需要替换成 className
+// 4.html 转 jsx 工具 https://transform.tools/html-to-jsx
 function About() {
     return (
         <div>
