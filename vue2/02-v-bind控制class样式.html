@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="">
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+        }
+        .pink {
+            background-color: pink;
+        }
+
+        .big {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <!-- 通过对象控制，适用于一个类名来回切换的场景 -->
+    <div class="box" :class="{ pink: true, big: false }"></div>
+    <!-- 通过数组控制，适用于批量添加或删除类 -->
+    <div class="box" :class="[ 'pink', 'big' ]"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+<script>
+
+    const app = new Vue({
+        el: '#app',
+        data: {
+
+        },
+        methods: {
+        }
+    })
+
+</script>
+
+</body>
+</html>
