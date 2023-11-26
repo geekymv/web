@@ -3,6 +3,10 @@
     <TodoHeader @addTodo="handleAddTodo"></TodoHeader>
     <TodoMain @delTodo="handleDelTodo" :list="list"></TodoMain>
     <TodoFooter @clearTodo="handleClearTodo" :list="list"></TodoFooter>
+      <hr/>
+      <BaseSelect @cityChange="handleCityChange" :cityId="cityId"></BaseSelect>
+      <!-- v-model = :value 和 @input 组合-->
+      <BaseSelectModel v-model="cityIdModel"></BaseSelectModel>
   </div>
 </template>
 
@@ -10,7 +14,8 @@
 import TodoHeader from './components/TodoHeader.vue'
 import TodoMain from './components/TodoMain.vue'
 import TodoFooter from './components/TodoFooter.vue'
-
+import BaseSelect from './components/BaseSelect.vue'
+import BaseSelectModel from './components/BaseSelectModel.vue'
 /**
  * 渲染功能
  * 1.提供数据 - 提供在公共的组件
@@ -39,13 +44,17 @@ export default {
             { id: 2, name: '踢足球'},
             { id: 3, name: '打乒乓球'},
             { id: 4, name: '打羽毛球'},
-        ]
+        ],
+        cityId: '102',
+        cityIdModel: '103',
     }
   },
   components: {
       TodoHeader,
       TodoMain,
-      TodoFooter
+      TodoFooter,
+      BaseSelect,
+      BaseSelectModel
   },
     methods: {
         handleAddTodo: function (todoName) {
@@ -61,6 +70,10 @@ export default {
         },
         handleClearTodo: function () {
             this.list = []
+        },
+        // 子组件切换城市
+        handleCityChange: function (cityId) {
+            this.cityId = cityId
         }
     },
     watch: {
