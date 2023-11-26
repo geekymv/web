@@ -13,5 +13,17 @@ vue create project-name
 yarn serve 或 npm run serve
 
 ```
+
+### Style 支持 less
+```shell
+
+<style lang="less">
+</style>
+
+1.给style 加上 lang="less"
+2.安装依赖包 less less-loader
+
+```
+
 ### 插件
 Vetur
