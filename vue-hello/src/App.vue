@@ -34,7 +34,7 @@ export default {
   name: 'App',
   data() {
     return {
-        list: [
+        list: JSON.parse(localStorage.getItem('todoList')) || [
             { id: 1, name: '打篮球'},
             { id: 2, name: '踢足球'},
             { id: 3, name: '打乒乓球'},
@@ -62,6 +62,15 @@ export default {
         handleClearTodo: function () {
             this.list = []
         }
+    },
+    watch: {
+      // list 内容变化，存储到本地
+      list: {
+          deep: true,
+          handler: function(newValue) {
+              localStorage.setItem('todoList', JSON.stringify(newValue))
+          }
+      }
     }
 }
 </script>
