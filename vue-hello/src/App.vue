@@ -7,6 +7,7 @@
       <BaseSelect @cityChange="handleCityChange" :cityId="cityId"></BaseSelect>
       <!-- v-model = :value 和 @input 组合-->
       <BaseSelectModel v-model="cityIdModel"></BaseSelectModel>
+      <BaseInput v-model="name"></BaseInput>
   </div>
 </template>
 
@@ -16,6 +17,9 @@ import TodoMain from './components/TodoMain.vue'
 import TodoFooter from './components/TodoFooter.vue'
 import BaseSelect from './components/BaseSelect.vue'
 import BaseSelectModel from './components/BaseSelectModel.vue'
+import BaseInput from './components/BaseInput.vue'
+
+
 /**
  * 渲染功能
  * 1.提供数据 - 提供在公共的组件
@@ -47,6 +51,7 @@ export default {
         ],
         cityId: '102',
         cityIdModel: '103',
+        name: 'tony'
     }
   },
   components: {
@@ -54,7 +59,8 @@ export default {
       TodoMain,
       TodoFooter,
       BaseSelect,
-      BaseSelectModel
+      BaseSelectModel,
+      BaseInput
   },
     methods: {
         handleAddTodo: function (todoName) {
