@@ -8,6 +8,8 @@
       <!-- v-model = :value 和 @input 组合-->
       <BaseSelectModel v-model="cityIdModel"></BaseSelectModel>
       <BaseInput v-model="name"></BaseInput>
+
+      <MyTag v-model="tagName"></MyTag>
   </div>
 </template>
 
@@ -18,7 +20,7 @@ import TodoFooter from './components/TodoFooter.vue'
 import BaseSelect from './components/BaseSelect.vue'
 import BaseSelectModel from './components/BaseSelectModel.vue'
 import BaseInput from './components/BaseInput.vue'
-
+import MyTag from './components/MyTag.vue'
 
 /**
  * 渲染功能
@@ -51,7 +53,8 @@ export default {
         ],
         cityId: '102',
         cityIdModel: '103',
-        name: 'tony'
+        name: 'tony',
+        tagName: '水杯'
     }
   },
   components: {
@@ -60,7 +63,8 @@ export default {
       TodoFooter,
       BaseSelect,
       BaseSelectModel,
-      BaseInput
+      BaseInput,
+      MyTag
   },
     methods: {
         handleAddTodo: function (todoName) {
