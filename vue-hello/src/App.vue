@@ -9,7 +9,24 @@
       <BaseSelectModel v-model="cityIdModel"></BaseSelectModel>
       <BaseInput v-model="name"></BaseInput>
 
-      <MyTag v-model="tagName"></MyTag>
+      <div class="table-case">
+        <MyTable :products="products">
+            <template #thead>
+                <th>编号</th>
+                <th>图片</th>
+                <th>名称</th>
+                <th width="100px">标签</th>
+            </template>
+            <template #tbody="{item, index}">
+                <td> {{ index + 1 }}</td>
+                <td><img :src="item.picture" /></td>
+                <td> {{ item.name }}</td>
+                <td>
+                    <MyTag v-model="item.tag"></MyTag>
+                </td>
+            </template>
+        </MyTable>
+      </div>
   </div>
 </template>
 
@@ -21,6 +38,7 @@ import BaseSelect from './components/BaseSelect.vue'
 import BaseSelectModel from './components/BaseSelectModel.vue'
 import BaseInput from './components/BaseInput.vue'
 import MyTag from './components/MyTag.vue'
+import MyTable from './components/MyTable.vue'
 
 /**
  * 渲染功能
@@ -51,10 +69,14 @@ export default {
             { id: 3, name: '打乒乓球'},
             { id: 4, name: '打羽毛球'},
         ],
+        products: [
+            {id: 101, name: '商品1', picture: 'https://avatars.githubusercontent.com/u/4549602?v=4', tag: '孩童'},
+            {id: 102, name: '商品2', picture: 'https://avatars.githubusercontent.com/u/4549602?v=4', tag: '老人'},
+            {id: 103, name: '商品3', picture: 'https://avatars.githubusercontent.com/u/4549602?v=4', tag: '女士'},
+        ],
         cityId: '102',
         cityIdModel: '103',
         name: 'tony',
-        tagName: '水杯'
     }
   },
   components: {
@@ -64,7 +86,8 @@ export default {
       BaseSelect,
       BaseSelectModel,
       BaseInput,
-      MyTag
+      MyTag,
+      MyTable
   },
     methods: {
         handleAddTodo: function (todoName) {
@@ -98,7 +121,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -107,4 +130,15 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+    .table-case {
+        width: 1000px;
+        margin: 50px auto;
+        img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            vertical-align: center;
+        }
+    }
+
 </style>
