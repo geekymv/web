@@ -16,3 +16,8 @@ onclick -> onClick
 tabindex -> tabIndex
 
 ```
+
+安装依赖
+```shell
+npm install
+```
