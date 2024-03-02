@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <h3>用户注册</h3>
+    姓名:
+    <input v-model="name" name="name" type="text">
+    <br/>
+
+    性别:
+    <input v-model="gender" name="gender" value="1" type="radio">男
+    <input v-model="gender" name="gender" value="2" type="radio">女
+    <br/>
+
+    城市:
+    <select v-model="city" name="city">
+        <option disabled value="">请选择</option>
+        <option value="101">北京</option>
+        <option value="102">上海</option>
+    </select>
+    <br/>
+
+    爱好
+    <input v-model="hobbies" id="basketball" value="1" type="checkbox">篮球
+    <input v-model="hobbies" id="football"  value="2" type="checkbox">足球
+    <br/>
+
+    自我介绍
+    <textarea v-model="introduce"></textarea>
+    <br/>
+    <button>立即注册</button>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+<script>
+
+    const app = new Vue({
+        el: '#app',
+        data: {
+            name: '',
+            gender: '',
+            city: '',
+            hobbies: [],
+            introduce: ''
+        },
+        methods: {
+        }
+    })
+
+</script>
+
+</body>
+</html>

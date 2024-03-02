@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="">
+        .father {
+            width:100px;
+            height:200px;
+            background-color: red;
+        }
+        .son {
+            width:50px;
+            height:100px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <!-- @事件名.stop 阻止冒泡 -->
+    <div @click="father" class="father">
+        <div @click.stop="son" class="son"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+<script>
+
+    const app = new Vue({
+        el: '#app',
+        data: {
+
+        },
+        methods: {
+            father: function() {
+                alert('father')
+            },
+            son: function(e) {
+                // e.stopPropagation()
+                alert('son')
+            },
+
+        }
+    })
+
+</script>
+
+</body>
+</html>
