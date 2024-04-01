@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es5",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "module": "commonjs",                                /* Specify what module code is generated. */
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "outDir": "scripts/"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
