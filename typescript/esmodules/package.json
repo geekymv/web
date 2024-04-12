@@ -1,0 +1,16 @@
+{
+  "name": "esmodules",
+  "version": "1.0.0",
+  "description": "npm install es6-module-loader traceur systemjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "es6-module-loader": "^0.17.11",
+    "systemjs": "^6.14.3",
+    "traceur": "^0.0.111"
+  }
+}
