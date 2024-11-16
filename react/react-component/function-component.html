@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>hello react</title>
+    </head>
+
+    <body>
+        <div id="test"></div>
+
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+        <!-- 引入 babel, 用于将 jsx 转为 js -->
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <!-- 此处一定要写 babel -->
+        <script type="text/babel">
+            /* 函数式组件 */
+            function MyComponenet() {
+                console.log(this) // 此处的 this 是 undefined，因为 babel 编译后开启了严格模式
+                return <h2>我是用函数定义的组件，适用于简单组件的定义</h2>
+            }
+            ReactDOM.render(<MyComponenet/>, document.getElementById('test'))
+            /*
+            ReactDOM.render 做了哪些事情
+            1.React 解析组件标签，找到了 MyComponenet 组件；
+            2.发现组件是使用函数定义的，随后调用该函数，返回的虚拟DOM 转为真实DOM，随后呈现在页面中。
+            */
+        </script>
+
+    </body>
+
+</html>
+
+
+
+
+
