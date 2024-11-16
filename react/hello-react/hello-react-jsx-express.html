@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>hello react</title>
+    </head>
+
+    <body>
+        <div id="test"></div>
+
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+        <!-- 引入 babel, 用于将 jsx 转为 js -->
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <!-- 此处一定要写 babel -->
+        <script type="text/babel">
+            /* 创建虚拟DOM */
+            // const VDOM = <h1>hello react</h1>
+            // 多行可以使用括号包起来
+            const VDOM = (
+                <div>
+                    <h1>hello react</h1>
+                    <span>test</span>
+                </div>
+            )
+            /* 渲染虚拟 DOM 页面 */
+            ReactDOM.render(VDOM, document.getElementById('test'))
+            /*
+            标签中混入js表达式时要使用{}。注意是表达式！
+            区分 js语句 与 js表达式
+            表达式：一个表达式会产生一个值，可以放在一个任意需要值的地方，下面这些都是表达式：
+            1. a 变量
+            2. a + b
+            3. demo(1)
+            4. arr.map()
+            5. function test(){}
+
+            语句，下面这些都是语句
+            1. if(){}
+            2. for(){}
+            3. switch(){case}
+
+
+            */
+        </script>
+
+    </body>
+
+</html>
+
+
+
+
+
