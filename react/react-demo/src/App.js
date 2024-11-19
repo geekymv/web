@@ -39,13 +39,47 @@ class App extends Component {
     })
   }
 
+  // 删除todo
+  deleteTodo = (id)=> {
+    const {todos} = this.state
+    const newTodos = todos.filter(todo => {
+      return todo.id !== id
+    })
+    this.setState({
+      todos: newTodos
+    })
+  }
+
+  // 更新所有(选中所有、取消选中)
+  updateAllTodo = (done) => {
+    const {todos} = this.state
+    const newTodos = todos.map(todo => {
+      return {...todo, done : done}
+    })
+    this.setState({
+      todos: newTodos
+    })
+  }
+
+  // 清除已完成任务
+  clearAllDone = () => {
+    const {todos} = this.state
+    const newTodos = todos.filter(todo => {
+      return todo.done !== true
+    })
+
+    this.setState({
+      todos: newTodos
+    })
+  }
+
   render() {
     const {todos} = this.state;
     return (
       <div>
         <Header addTodo={this.addTodo}/>
-        <List todos={todos} updateTodo={this.updateTodo}/>
-        <Footer/>
+        <List todos={todos} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo}/>
+        <Footer todos={todos} updateAllTodo={this.updateAllTodo} clearAllDone={this.clearAllDone} />
       </div>
     )
   }
