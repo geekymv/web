@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+position 
+relative 相对，网页元素从它原来的位置进行移动
+absolute 绝对，网页元素从它父元素的左上角开始计算
+*/
+header {
+    background-color: black;
+    height: 80px;
+    width: 100%;
+}
+
+h1 {
+    color: white;
+    position: absolute;
+    left: 120px;
+    top: 0;
+    line-height: 80px;
+    background-image: url(images/logo.avif);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 210px;
+    text-indent: -9999px; /* 图片替换文字，SEO优化 */
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* 4vw viewport width 4% */
+header li {
+    display: inline;
+    margin-right: 4vw;
+}
+
+header ul {
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    line-height: 80px; /* 居中 */
+}
+
+/*
+header, section, footer {
+    background-color:aquamarine;
+    border: 5px solid  orange;
+    padding: 30px;
+    margin: 30px;
+}
+*/
+
+.news {
+    background-color: orange;
+    color: white;
+    height: 80vh;
+    background-image: url(images/news.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover; /* 背景图片填充整个区块 */
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.news h2 {
+    font-size: 60px;
+}
+.news p {
+    color: aliceblue;
+    font-size: 20px;
+    margin: 20px 0;
+}
+/* 将 a 标签变成一个带有边框的按钮效果 */
+.news a {
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.slogan {
+    background-color:cadetblue;
+    color: white;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    line-height: 1.8em;
+}
+
+.product {
+    display: flex;
+    background-color: #ede9db;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 180px 80px;
+}
+.product div {
+   width: 300px;
+   text-align: center;
+}
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+.product h3 {
+    font-size: 20px;
+    margin: 20px 0;
+}
+.product p {
+    font-size: 14px;
+    line-height: 1.6em;
+}
+
+
+.newsletter {
+    background-color: #b7b7b7;
+    color: white;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.newsletter p {
+    margin-bottom: 20px;
+}
+.newsletter input, .newsletter button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #949d9a;
+    border-radius: 5px;
+}
+.newsletter input {
+    width: 200px;
+    margin-right: 15px;
+    padding: 10px;
+}
+.newsletter button {
+    width: 80px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: #dddddd;
+}
+input:focus {
+    outline: none;
+    border-color: white;
+}
+
+footer {
+    background-color: #000000;
+    color: #b7b7b7;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
